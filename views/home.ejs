@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        #add-a-task {
+            background-image: url('https://i.pinimg.com/originals/6d/a2/58/6da258cced8e55a90b7e8dc848d9dc26.png');
+            /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , var('https://i.pinimg.com/originals/6d/a2/58/6da258cced8e55a90b7e8dc848d9dc26.png') center center; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 100;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .form-inputs:not(#select-category-form) {
+            margin-right: 3rem;
+            margin-left: 3rem;
+            margin-top: 3rem;
+            background-color:#6699cc;
+        }
+
+        #tasks {
+            outline: none;
+            border: none;
+            /* background-color: #6699cc; */
+            resize: none;
+            width: 100%;
+        }
+
+
+        /* #input-task-form {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            padding-top: 20px;
+           
+            } 
+        */
+
+        /* #display-task {
+            background-image: url('https://img.freepik.com/free-vector/illustration-list_53876-28518.jpg?size=626&ext=jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100%;
+            width: 90%;
+        } */
+
+        #select-category-form {
+            border-bottom: 1px solid black;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+
+        #input-date-form {
+            border-bottom: 1px solid black;
+            padding-bottom: 20px;
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+
+        #no-task {
+            color: #6699cc;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #add-task-btn {
+            margin-bottom: 30px;
+        }
+
+        .todos-list {
+            font-weight: 500;
+            margin-left: 30px;
+            width: 90%;
+            justify-content: space-between;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            text-align: right;
+            border-bottom: 1px solid black;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-top: 1px solid black;
+        }
+
+        .col:not(.category) {
+            border-bottom: 1px solid black;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .category-btn {
+            background-color: blueviolet;
+            padding: 8px;
+        }
+
+        .category-btn:hover {
+            cursor: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="add-a-task">
+        <h1 class="heading">TODO app</h1>
+        <form method="POST" action="/addtodo-task">
+
+            <div id="input-task-form" class="form-inputs">
+                <label for="tasks">DESCRIPTION</label>
+                <div id="input-task">
+                    <textarea id="tasks" type="text" name="task" placeholder="Whaddya wanna do" cols="30"
+                        rows="2"></textarea>
+                </div>
+            </div>
+
+            <div id="select-category-form" class="form-inputs">
+                <label for="categories">CATEGORY</label>
+                <div>
+                    <select name="category" id="categories">
+                        <option selected disabled>Select category</option>
+                        <option>Personal</option>
+                        <option>Work</option>
+                        <option>School</option>
+                        <option>Cleaning</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="input-date-form" class="form-inputs">
+                <label for="date">DATE</label>
+                <div id="input-date">
+                    <input id="date" type="date" name="deadline">
+                </div>
+            </div>
+
+            <button type="submit" class="form-inputs tasks-btn" id="add-task-btn">ADD TASK</button>
+        </form>
+
+
+    </div>
+
+    
+</body>
+
+</html>
